@@ -1,0 +1,3 @@
+Get-WinEvent -LogName "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational" | `
+    Where-Object {($_.ID -eq 21) -and ($_.Message -match "domain\user") -and !($_.Message -match "")} | `
+    Format-Table -Property TimeCreated, Id, Message -Wrap -AutoSize
