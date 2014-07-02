@@ -130,7 +130,7 @@ $secpasswd = ConvertTo-SecureString "securedString" -AsPlainText -Force
 $mycreds = New-Object System.Management.Automation.PSCredential `
         ("sql@contoso.com", $secpasswd)
 
-$EmailTo = “itdep@contoso.comu”
+$EmailTo = “itdep@contoso.com”
 
 Send-MailMessage -SmtpServer $SmtpServer -From $EmailFrom -To $EmailTo `
         -Subject $Subject -Body $Body -credential $mycreds -Encoding OEM -BodyAsHtml
